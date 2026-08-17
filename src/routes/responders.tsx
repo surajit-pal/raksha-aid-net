@@ -40,6 +40,7 @@ function RespondersPage() {
       }, 2000);
       return () => clearTimeout(t);
     }
+    return undefined;
   }, [incident?.stage, advanceStage]);
 
   return (
