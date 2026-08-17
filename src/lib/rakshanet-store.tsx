@@ -133,7 +133,7 @@ export const TRAINING_MODULES = [
   },
 ];
 
-const DEMO_LOCATIONS = [
+const DEMO_LOCATIONS: { lat: number; lng: number; label: string }[] = [
   { lat: 28.4211, lng: 77.0412, label: "NH-48, near Kherki Daula Toll, Gurugram, Haryana" },
   { lat: 19.0421, lng: 72.8617, label: "Western Express Hwy, near Bandra, Mumbai, Maharashtra" },
   { lat: 12.9611, lng: 77.6387, label: "Outer Ring Rd, near Domlur, Bengaluru, Karnataka" },
@@ -192,7 +192,7 @@ export function RakshaNetProvider({ children }: { children: ReactNode }) {
   }, [incident, completedModules, hydrated]);
 
   const activate = useCallback(() => {
-    const loc = DEMO_LOCATIONS[Math.floor(Math.random() * DEMO_LOCATIONS.length)];
+    const loc = DEMO_LOCATIONS[Math.floor(Math.random() * DEMO_LOCATIONS.length)]!;
     const next: Incident = {
       id: makeIncidentId(),
       createdAt: new Date().toISOString(),
@@ -229,7 +229,7 @@ export function RakshaNetProvider({ children }: { children: ReactNode }) {
         setCompletedModules((m) => (m.includes(id) ? m.filter((x) => x !== id) : [...m, id])),
       reset: () => setIncident(null),
       runDemo: () => {
-        const loc = DEMO_LOCATIONS[0];
+        const loc = DEMO_LOCATIONS[0]!;
         setIncident({
           id: makeIncidentId(),
           createdAt: new Date().toISOString(),
