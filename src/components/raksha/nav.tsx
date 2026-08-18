@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, ShieldPlus } from "lucide-react";
+import { Menu } from "lucide-react";
+import logoAsset from "@/assets/rakshanet-logo.png.asset.json";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
