@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu } from "lucide-react";
-import logoAsset from "@/assets/rakshanet-logo.png.asset.json";
+import { Menu, ShieldPlus } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -22,13 +21,9 @@ export function SiteNav() {
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4">
         <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <img
-            src={logoAsset.url}
-            alt="RakshaNet logo"
-            className="size-10 object-contain"
-            width={40}
-            height={40}
-          />
+          <span className="flex size-9 items-center justify-center rounded-xl bg-emergency-gradient text-emergency-foreground shadow-emergency">
+            <ShieldPlus className="size-5" />
+          </span>
           <span className="font-display text-lg font-bold tracking-tight">RakshaNet</span>
         </Link>
 
